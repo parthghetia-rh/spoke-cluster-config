@@ -9,7 +9,7 @@ spec:
         configMapRef: acm-placement
         labelSelector:
           matchLabels:
-            cluster.open-cluster-management.io/placement: spokes-placement
+            cluster.open-cluster-management.io/placement: spokes-gitops-placement
         requeueAfterSeconds: 180
   template:
     metadata:
