@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - app-simple-1
 - weaviate
+- eso-operator
