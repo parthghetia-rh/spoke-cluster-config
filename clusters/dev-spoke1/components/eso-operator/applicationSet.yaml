@@ -30,7 +30,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: '{{repoURL}}' 
+        repoURL: https://github.com/redhat-cop/gitops-catalog.git
         targetRevision: '{{targetRevision}}'
         path: '{{path}}'
       destination:
