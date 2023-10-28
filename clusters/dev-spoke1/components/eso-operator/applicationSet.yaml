@@ -5,19 +5,6 @@ metadata:
   namespace: openshift-gitops
 spec:
   generators:
-    - list:
-      elements:
-      - name: instance
-        source:
-          repoURL: https://github.com/redhat-cop/gitops-catalog.git
-          targetRevision: HEAD
-          path: external-secrets-operator/instance/overlays/stable
-          # Other source options
-      - name: sub
-        source:
-          repoURL: https://github.com/redhat-cop/gitops-catalog.git
-          targetRevision: HEAD
-          path: external-secrets-operator/operator/overlays/stable
     - clusterDecisionResource:
         configMapRef: acm-placement # (1)
         labelSelector:
@@ -30,9 +17,12 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/redhat-cop/gitops-catalog.git
-        targetRevision: "{{targetRevision}}"
-        path: "{{path}}"
+        - repoURL: https://github.com/redhat-cop/gitops-catalog.git
+          targetRevision: HEAD
+          path: external-secrets-operator/instance/overlays/stable
+        - repoURL: https://github.com/redhat-cop/gitops-catalog.git
+          targetRevision: HEAD
+          path: external-secrets-operator/operator/overlays/stable
       destination:
         namespace: spokes
         server: "{{server}}" # (3)
