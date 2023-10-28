@@ -31,8 +31,8 @@ spec:
       project: default
       source:
         repoURL: https://github.com/redhat-cop/gitops-catalog.git
-        targetRevision: '{{targetRevision}}'
-        path: '{{path}}'
+        targetRevision: "{{targetRevision}}"
+        path: "{{path}}"
       destination:
         namespace: spokes
         server: "{{server}}" # (3)
