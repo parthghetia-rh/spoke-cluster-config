@@ -5,6 +5,19 @@ metadata:
   namespace: openshift-gitops
 spec:
   generators:
+    - list:
+      elements:
+      - name: instance
+        source:
+          repoURL: https://github.com/redhat-cop/gitops-catalog.git
+          targetRevision: HEAD
+          path: external-secrets-operator/instance/overlays/stable
+          # Other source options
+      - name: sub
+        source:
+          repoURL: https://github.com/redhat-cop/gitops-catalog.git
+          targetRevision: HEAD
+          path: external-secrets-operator/operator/overlays/stable
     - clusterDecisionResource:
         configMapRef: acm-placement # (1)
         labelSelector:
@@ -13,13 +26,13 @@ spec:
         requeueAfterSeconds: 180
   template:
     metadata:
-      name: components-{{name}} # (2)
+      name: eso-operator-{{name}} # (2)
     spec:
       project: default
       source:
-        repoURL: https://github.com/parthghetia-rh/spoke-cluster-config.git
-        targetRevision: main
-        path: clusters/dev-spoke-1/components/eso-operator
+        repoURL: '{{repoURL}}' 
+        targetRevision: '{{targetRevision}}'
+        path: '{{path}}'
       destination:
         namespace: spokes
         server: "{{server}}" # (3)
