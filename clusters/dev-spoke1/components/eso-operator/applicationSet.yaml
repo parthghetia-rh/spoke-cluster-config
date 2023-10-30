@@ -17,9 +17,9 @@ spec:
     spec:
       project: default
       source:
-        - repoURL: https://github.com/parthghetia-rh/spoke-cluster-config.git
-          targetRevision: HEAD
-          path: clusters/hub-1/components/eso/base
+        repoURL: https://github.com/parthghetia-rh/spoke-cluster-config.git
+        targetRevision: HEAD
+        path: clusters/hub-1/components/eso/base
       destination:
         namespace: spokes
         server: "{{server}}" # (3)
