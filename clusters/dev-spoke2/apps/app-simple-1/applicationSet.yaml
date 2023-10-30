@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: parth-spring-boot
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusterDecisionResource:
+        configMapRef: acm-placement # (1)
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: spokes-gitops-placement
+        requeueAfterSeconds: 180
+  template:
+    metadata:
+      name: parth-spring-boot-{{name}} # (2)
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/parthghetia-rh/gitops-innovative.git
+        targetRevision: main
+        path: apps/simple
+      destination:
+        namespace: spokes
+        server: "{{server}}" # (3)
+      syncPolicy:
+        automated:
+          selfHeal: false
+        syncOptions:
+          - CreateNamespace=true # (4)
