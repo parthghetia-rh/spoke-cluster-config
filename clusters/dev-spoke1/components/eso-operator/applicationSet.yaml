@@ -19,7 +19,7 @@ spec:
       sources:
         - repoURL: https://github.com/redhat-cop/gitops-catalog.git
           targetRevision: HEAD
-          path: external-secrets-operator/instance/overlays/stable
+          path: external-secrets-operator/instance/overlays/default
         - repoURL: https://github.com/redhat-cop/gitops-catalog.git
           targetRevision: HEAD
           path: external-secrets-operator/operator/overlays/stable
