@@ -16,13 +16,10 @@ spec:
       name: eso-operator-{{name}} # (2)
     spec:
       project: default
-      sources:
-        - repoURL: https://github.com/redhat-cop/gitops-catalog.git
+      source:
+        - repoURL: https://github.com/parthghetia-rh/spoke-cluster-config.git
           targetRevision: HEAD
-          path: external-secrets-operator/operator/overlays/stable
-        - repoURL: https://github.com/redhat-cop/gitops-catalog.git
-          targetRevision: HEAD
-          path: external-secrets-operator/instance/overlays/default
+          path: clusters/hub-1/components/eso/base
       destination:
         namespace: spokes
         server: "{{server}}" # (3)
