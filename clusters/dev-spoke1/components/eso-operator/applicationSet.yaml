@@ -19,10 +19,10 @@ spec:
       sources:
         - repoURL: https://github.com/redhat-cop/gitops-catalog.git
           targetRevision: HEAD
-          path: external-secrets-operator/instance/overlays/default
+          path: external-secrets-operator/operator/overlays/stable
         - repoURL: https://github.com/redhat-cop/gitops-catalog.git
           targetRevision: HEAD
-          path: external-secrets-operator/operator/overlays/stable
+          path: external-secrets-operator/instance/overlays/default
       destination:
         namespace: spokes
         server: "{{server}}" # (3)
