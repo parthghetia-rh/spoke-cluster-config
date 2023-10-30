@@ -30,4 +30,5 @@ spec:
         automated:
           selfHeal: false
         syncOptions:
-          - CreateNamespace=true # (4)
+          - CreateNamespace=true
+          - SkipDryRunOnMissingResource=true
