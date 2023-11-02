@@ -15,7 +15,7 @@ spec:
     metadata:
       name: parth-spring-boot-{{name}} # (2)
     spec:
-      project: test-app
+      project: default
       source:
         repoURL: https://github.com/parthghetia-rh/gitops-innovative.git
         targetRevision: main
