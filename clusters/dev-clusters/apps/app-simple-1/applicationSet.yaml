@@ -15,13 +15,13 @@ spec:
     metadata:
       name: parth-spring-boot-{{name}} # (2)
     spec:
-      project: openshift-gitops
+      project: test-app
       source:
         repoURL: https://github.com/parthghetia-rh/gitops-innovative.git
         targetRevision: main
         path: apps/simple
       destination:
-        namespace: openshift-gitops
+        namespace: test-app
         server: "{{server}}" # (3)
       syncPolicy:
         automated:
