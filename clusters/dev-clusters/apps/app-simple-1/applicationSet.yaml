@@ -21,7 +21,7 @@ spec:
         targetRevision: main
         path: apps/simple
       destination:
-        namespace: spokes
+        namespace: openshift-gitops
         server: "{{server}}" # (3)
       syncPolicy:
         automated:
