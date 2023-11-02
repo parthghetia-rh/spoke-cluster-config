@@ -15,7 +15,7 @@ spec:
     metadata:
       name: parth-spring-boot-{{name}} # (2)
     spec:
-      project: default
+      project: openshift-gitops
       source:
         repoURL: https://github.com/parthghetia-rh/gitops-innovative.git
         targetRevision: main
