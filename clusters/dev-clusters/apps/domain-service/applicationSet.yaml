@@ -19,7 +19,7 @@ spec:
       source:
         repoURL: https://gitlab.consulting.redhat.com/sforeman/innovative-solutions.git
         targetRevision: HEAD
-        path: services/domain/overlays/dev
+        path: apps/domain/base
       destination:
         namespace: tailwinds-domain
         server: "{{server}}" # (3)
