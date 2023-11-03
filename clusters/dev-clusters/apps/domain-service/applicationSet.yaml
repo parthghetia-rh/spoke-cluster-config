@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://gitlab.consulting.redhat.com/sforeman/innovative-solutions
+        repoURL: https://gitlab.consulting.redhat.com/sforeman/innovative-solutions.git
         targetRevision: HEAD
         path: services/domain/overlays/dev
       destination:
