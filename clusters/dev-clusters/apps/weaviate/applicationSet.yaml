@@ -19,7 +19,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://parthghetia-rh.github.io/weaviate/
+        repoURL: https://innovative-quay-quay-registry.apps.multi-az-hub.i8vo.p1.openshiftapps.com/repository/quayadmin/helm
         chart: weaviate
         targetRevision: 16.6.0
       destination:
